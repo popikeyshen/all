@@ -12,7 +12,7 @@ In some tasks, such as composition or neural networks, you would like to know it
 <img src="https://github.com/popikeyshen/all/blob/main/disassemble_rgb/rgb.jpg" width = 40% />  <img src="https://github.com/popikeyshen/all/blob/main/disassemble_rgb/gray.jpg" width = 40% /> 
 </p>
 
-Where one way is to use HSV and another is to convert RGB cube space to spherical, where the value(gray) component will be distance, and color component - teta and phi angles. 
+Where one way is to use Opencv HSV convertation and another is to convert RGB cube space to spherical, where the value(gray) component will be distance, and color component - teta and phi angles. 
 
 <p align="center"> 
 <img src="https://github.com/popikeyshen/all/blob/main/disassemble_rgb/spherical.jpg" width = 40% /><img src="https://github.com/popikeyshen/all/blob/main/disassemble_rgb/hue_sat.jpg" width = 25% />
