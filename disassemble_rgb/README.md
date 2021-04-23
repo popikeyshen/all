@@ -2,8 +2,8 @@
 
 Look at this beautiful image of a cat.
 
-<!--![cat.jpg](https://github.com/popikeyshen/all/blob/main/disassemble_rgb/cat.jpg)-->
-<img src="https://github.com/popikeyshen/all/blob/main/disassemble_rgb/cat.jpg" width = 40%>
+[cat.jpg](https://github.com/popikeyshen/all/blob/main/disassemble_rgb/cat.jpg)
+#<img src="https://github.com/popikeyshen/all/blob/main/disassemble_rgb/cat.jpg" width = 40%>
 
 In some tasks, such as composition or neural networks, you would like to know its color or brightness in order to work separately with color and ignore the darkness and saturation of individual areas. Since the very common RGB format contains 3 components, this can interfere. I offer several ways to highlight only the color component.
 
