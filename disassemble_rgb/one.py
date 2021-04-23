@@ -9,7 +9,7 @@ import math
 def rgbToVec(bgr):
 
 	# https://en.wikipedia.org/wiki/Spherical_coordinate_system
-	# we convert the rgb coordinates like and xyz сartesian to spherical coordinate system where the value component will be L, and color component - teta and phi angle
+	# we convert the rgb(xyz) сartesian to spherical coordinate system where the value component will be L, and color component - teta and phi angle
 
 	x,y,z=bgr 
 	## add little number to avoid division by 0
