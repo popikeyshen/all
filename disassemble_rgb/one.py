@@ -3,27 +3,32 @@ import cv2
 import numpy as np
 
 
-# https://en.wikipedia.org/wiki/Spherical_coordinate_system
+
 
 import math
 def rgbToVec(bgr):
-	x,y,z=bgr
-	x+=10
-	y+=10
-	z+=10
 
+	# https://en.wikipedia.org/wiki/Spherical_coordinate_system
+	# we convert the rgb coordinates like and xyz сartesian to spherical coordinate system where the value component will be L, and color component - teta and phi angle
 
+	x,y,z=bgr 
+	## add little number to avoid division by 0
+	x+=1
+	y+=1
+	z+=1
+
+	# get the value component
 	l = (x**2+y**2+z**2)**0.5
 	teta = math.acos(z/l)
 	phi =  math.atan(y/x)
 
-	gray = l
+	gray = l # get the value component
 
-	l=255.0
+	l=255.0 # set all pixels of gray by 255 to see just the color component with this value
 	x = l*math.cos(phi)*math.sin(teta)
 	y = l*math.sin(phi)*math.sin(teta)
 	z = l*math.cos(teta)
-	bgr = x,y,z
+	bgr = x,y,z # get the color component
 
 
 	return bgr, int(gray/2)
@@ -55,5 +60,28 @@ def pixToVec():
 
 	cv2.waitKey(0)
 
-pixToVec()
+def hsv():
+	img = cv2.imread("cat.jpg")
+	img = cv2.resize(img, (500,300), interpolation = cv2.INTER_AREA)
+	
+	hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)  # hue, saturation, value
 
+	### you can look on the hsv components separately
+	v = hsv[:,:,2]
+	s = hsv[:,:,1]
+	h = hsv[:,:,0]
+	## the gray part of image (Value)
+	cv2.imshow("value(gray)",v)
+	cv2.imshow("saturation", s)
+	#cv2.imshow("hue", h) # gue in gray scale
+
+	## set all pixels of gray by 255 to see just the color component with this value
+	hsv[:,:,2] = hsv[:,:,2]*0+255
+	#hsv[:,:,1] = hsv[:,:,1]*0+255  # set saturation to one value
+
+	bgr = cv2.cvtColor(hsv, cv2.COLOR_HSV2BGR)
+	cv2.imshow("img_hsv",bgr)
+	cv2.waitKey(0)
+
+pixToVec()
+hsv()
