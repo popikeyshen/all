@@ -17,8 +17,9 @@ Where one way is to use Opencv HSV convertation and another is to convert RGB cu
 
 <p align="center"> 
 <img src="https://github.com/popikeyshen/all/blob/main/disassemble_rgb/rgbToHSV.jpg" width = 40% />
-
+</p>
+<p align="center"> 
 <img src="https://github.com/popikeyshen/all/blob/main/disassemble_rgb/spherical.jpg" width = 40% />
-  </p>
+</p>
 
 
