@@ -3,7 +3,7 @@
 
 
 <!--![cat.jpg](http://github.com/popikeyshen/all/disassemble_rgb/cat.jpg)-->
-<p align="center"> <img src="hhttps://github.com/popikeyshen/all/blob/main/kcf_tracker/correlation_filter.jpg" width = 100% /> </p>
+<p align="center"> <img src="hhttps://github.com/popikeyshen/all/blob/main/kcf_tracker/correlation_filter.jpg" /> </p>
 
 ### inspired by
 ```
