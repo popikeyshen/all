@@ -5,8 +5,8 @@ But can be not sensitive to little details. Cause reconfiguration of every clust
 
 Examples
 
-<p align="center"> <img src="https://github.com/popikeyshen/all/blob/main/clustering/cat.jpg" width = 40% /> <p align="center"> <img src="https://github.com/popikeyshen/all/blob/main/clustering/cat_res.png" width = 40% />
-</p>
+<p align="center"> 
+<img src="https://github.com/popikeyshen/all/blob/main/clustering/cat.jpg" width = 40% />  <img src="https://github.com/popikeyshen/all/blob/main/clustering/cat_res.png" width = 40% /> 
 </p>
 
 <p align="center"> <img src="https://github.com/popikeyshen/all/blob/main/clustering/k-means.jpg"  /></p>
