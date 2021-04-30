@@ -110,3 +110,9 @@ kmeansMy(img)
 
 
 
+
+
+
+
+
+
