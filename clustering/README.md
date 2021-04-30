@@ -24,3 +24,12 @@ Clustering example
 <p align="center"> 
 <img src="https://github.com/popikeyshen/all/blob/main/clustering/cat.jpg" width = 40% />  <img src="https://github.com/popikeyshen/all/blob/main/clustering/cat_res.png" width = 40% /> 
 </p>
+
+# DBSCAN 
+
+Density-Based Spatial Clustering of Applications with Noise. Finds core samples of high density and expands clusters from them. Good for data which contains clusters of similar density.
+But not good for image like this cat.
+
+# More
+
+Many of algorithms can be found in sklearn https://scikit-learn.org/stable/modules/clustering.html
