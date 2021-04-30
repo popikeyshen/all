@@ -19,11 +19,7 @@ Mean shift clustering aims to discover “blobs” in a smooth density of sample
 <p align="center"> <img src="https://github.com/popikeyshen/all/blob/main/clustering/mean-shift.png"  /></p>
 
 It has a complexity O(T*n^2). Cause it makes a bad joke for computer vision task.
-Clustering example
 
-<p align="center"> 
-<img src="https://github.com/popikeyshen/all/blob/main/clustering/cat.jpg" width = 40% />  <img src="https://github.com/popikeyshen/all/blob/main/clustering/cat_res.png" width = 40% /> 
-</p>
 
 # DBSCAN 
 
