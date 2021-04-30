@@ -1,4 +1,4 @@
-# One of clustering methods is k-means
+# K-means
 
 It can be used for quantization.
 But can be not sensitive to little details. Cause reconfiguration of every cluster in every epoch is with mean method. Even with many clusters. Random initialisation.. And need to be known num of clusters.
@@ -10,3 +10,17 @@ Examples
 </p>
 
 <p align="center"> <img src="https://github.com/popikeyshen/all/blob/main/clustering/k-means.jpg"  /></p>
+
+# MeanShift
+
+Mean shift clustering using a flat kernel.
+Mean shift clustering aims to discover “blobs” in a smooth density of samples. It is a centroid-based algorithm, which works by updating candidates for centroids to be the mean of the points within a given region. These candidates are then filtered in a post-processing stage to eliminate near-duplicates to form the final set of centroids.
+
+<p align="center"> <img src="https://github.com/popikeyshen/all/blob/main/clustering/mean-shift.png"  /></p>
+
+It has a complexity O(T*n^2). Cause it makes a bad joke for computer vision task.
+Clustering example
+
+<p align="center"> 
+<img src="https://github.com/popikeyshen/all/blob/main/clustering/cat.jpg" width = 40% />  <img src="https://github.com/popikeyshen/all/blob/main/clustering/cat_res.png" width = 40% /> 
+</p>
