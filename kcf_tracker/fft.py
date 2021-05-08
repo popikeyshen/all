@@ -43,11 +43,13 @@ def subwindow(img, window, borderType=cv2.BORDER_CONSTANT):
 		res = cv2.copyMakeBorder(res, border[1], border[3], border[0], border[2], borderType)
 	return res
 
-def createHanningMats():
-	hann2t, hann1t = np.ogrid[0:100, 0:100]
+def createHanningMats(size):
+	w,h = size
+	print("hann size",size)
+	hann2t, hann1t = np.ogrid[0:w, 0:h]
 
-	hann1t = 0.5 * (1 - np.cos(2*np.pi*hann1t/(100-1)))
-	hann2t = 0.5 * (1 - np.cos(2*np.pi*hann2t/(100-1)))
+	hann1t = 0.5 * (1 - np.cos(2*np.pi*hann1t/(w-1)))
+	hann2t = 0.5 * (1 - np.cos(2*np.pi*hann2t/(h-1)))
 	hann2d = hann2t * hann1t
 
 	hann = hann2d
@@ -55,9 +57,11 @@ def createHanningMats():
 	return hann
 
 
-def getFeatures(image,inithann, scale=1.0):
-	extracted_roi = [200,200,100,100]
-	z = image[extracted_roi[2]:extracted_roi[0], extracted_roi[2]:extracted_roi[1]]  # crop 
+def getFeatures(image,extracted_roi , scale=1.0):
+	
+	z = image[extracted_roi[2]:extracted_roi[0], extracted_roi[3]:extracted_roi[1]]  # crop 
+
+	
 	#cv2.imshow("z",z)
 	#cv2.waitKey(0)
 	FeaturesMap = cv2.cvtColor(z, cv2.COLOR_BGR2GRAY)
@@ -68,7 +72,8 @@ def getFeatures(image,inithann, scale=1.0):
 	#plt.imshow(createHanningMats())  # hann
 	#plt.show()
 
-	FeaturesMap = FeaturesMap * createHanningMats()
+	size = (roi[0]-roi[2],roi[1]-roi[3])
+	FeaturesMap = FeaturesMap * createHanningMats(size)
 	return FeaturesMap
 
 def complexDivision(a, b):
@@ -115,7 +120,11 @@ def rearrange(img):
 	#return img_
 
 def detect(z, x, _alphaf):
+
+	print("detect",z.shape, x.shape, _alphaf.shape)
+
 	k = gaussianCorrelation(x, z)
+	print("corelation",k.shape)
 	res = real(fftd(complexMultiplication(_alphaf, fftd(k)), True))
 
 	print("res",res.shape)
@@ -137,7 +146,7 @@ def detect(z, x, _alphaf):
 
 
 
-image = cv2.imread("/home/popikeyshen/d.jpg")
+image = cv2.imread("/home/popikeyshen/faces.jpg")
 #b = cv2.imread("/home/popikeyshen/face.jpg")
 
 h,w,c = image.shape
@@ -145,9 +154,13 @@ print(h,w,c)
 
 
 ### init
-roi = [200,100,100,100]
+roi = [300,250,200,150]
+cv2.rectangle(image,(roi[3],roi[2]), (roi[1],roi[0]), (0,255,255), 1)
+cv2.imshow("image1",image)
+cv2.waitKey(0)
 
-_tmpl   = getFeatures(image, 1)
+
+_tmpl   = getFeatures(image,roi)
 _prob   = createGaussianPeak(100, 100)
 _alphaf = np.zeros((100, 100, 2), np.float32)
 
@@ -163,10 +176,23 @@ _alphaf = (1-train_interp_factor)*_alphaf + train_interp_factor*alphaf
 
 
 
-image = cv2.imread("/home/popikeyshen/d11.jpg")
+image = cv2.imread("/home/popikeyshen/faces.jpg")
 ### update 
 
-loc, peak_value = detect(_tmpl, getFeatures(image, 0, 1.0), _alphaf)
+### conv
+#for y in range(0,50):
+y=0
+for x in range(0,50):
+		roi = [roi[0]+y*10,roi[1]+x*10,roi[2]+y*10,roi[3]+x*10]
+
+		im = image.copy()
+		cv2.rectangle(im,(roi[3],roi[2]), (roi[1],roi[0]), (0,255,255), 1)
+		cv2.imshow("image1",im)
+		cv2.waitKey(1)
+
+		loc, peak_value = detect(_tmpl, getFeatures(image,roi), _alphaf)
+
+
 print(loc, peak_value)
 
 _scale=1
@@ -176,18 +202,18 @@ cx = roi[0] + roi[2]/2.
 cy = roi[1] + roi[3]/2.
 print("cxcy", cx, cy)
 
-roi[0] = cx - roi[2]/2.0 + loc[1]*cell_size*_scale
-roi[1] = cy - roi[3]/2.0 + loc[0]*cell_size*_scale
+roi[0] = cx - roi[2]/2.0 + loc[0]*cell_size*_scale
+roi[1] = cy - roi[3]/2.0 + loc[1]*cell_size*_scale
 
 boundingbox = list(map(int, roi))
 cv2.rectangle(image,(boundingbox[0],boundingbox[1]), (boundingbox[0]+boundingbox[2],boundingbox[1]+boundingbox[3]), (0,255,255), 1)
 
-cv2.imshow("image",image)
+cv2.imshow("image2",image)
 cv2.waitKey(0)
 
 
 
-
+# https://www.programcreek.com/python/example/110719/cv2.mulSpectrums # examples
 
 
 
