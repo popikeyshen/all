@@ -8,7 +8,7 @@
 Where 
 
 <p align="center"> 
-<img src="https://github.com/popikeyshen/all/blob/main/fourier_transform/1d_fft/signal.png" width = 20% /> * <img src="https://github.com/popikeyshen/all/blob/main/fourier_transform/1d_fft/M.png" width = 20% /> = <img src="https://github.com/popikeyshen/all/blob/main/fourier_transform/1d_fft/res.png" width = 20% /> 
+<img src="https://github.com/popikeyshen/all/blob/main/fourier_transform/1d_fft/signal.png" width = 30% /> * <img src="https://github.com/popikeyshen/all/blob/main/fourier_transform/1d_fft/M.png" width = 30% /> = <img src="https://github.com/popikeyshen/all/blob/main/fourier_transform/1d_fft/res.png" width = 30% /> 
 </p>
 
 And the components of fft
@@ -18,6 +18,6 @@ And the components of fft
 	   plt.plot(fft[i] * np.sin(i*x)/71)
 ```
 <p align="center"> 
-<img src="https://github.com/popikeyshen/all/blob/main/fourier_transform/1d_fft/signal.png" width = 40% />
+<img src="https://github.com/popikeyshen/all/blob/main/fourier_transform/1d_fft/components.png" width = 40% />
 </p>
 
