@@ -14,8 +14,8 @@ Where
 And the components of fft
 
 ```
-	for i in range(1,71):
-	   plt.plot(fft[i] * np.sin(i*x)/71)
+	for i in range(1,200):
+	   plt.plot(fft[i] * np.sin(i*x)/200)
 ```
 <p align="center"> 
 <img src="https://github.com/popikeyshen/all/blob/main/fourier_transform/1d_fft/components.png" width = 40% />
