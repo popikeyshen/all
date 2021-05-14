@@ -56,7 +56,7 @@ def DFT_slow(x):
 	M = np.exp( -2j *np.pi * k * n / N)
 	res = np.dot(M, x)
 
-	plt.plot(res)
+	plt.plot(np.fft.fftshift(res))  # with frequency shift to center
 	#plt.savefig('res.png')
 	plt.show()
 	#plt.plot(M.real)
