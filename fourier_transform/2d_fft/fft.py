@@ -153,6 +153,8 @@ def fft_ifft():
 	plt.show()
 	plt.plot(s)
 	plt.show()
+	plt.plot(sp)
+	plt.show()
 
 def fft_ifft_image():
 	a  = cv2.imread("/home/popikeyshen/circle.jpg",0)
@@ -209,10 +211,10 @@ def kcf():
 
 
 
-image()
+#fft()
 #detect_blur_fft()
 
-#fft_ifft()
+fft_ifft()
 #fft_ifft_image()
 
 #def full_conv():
