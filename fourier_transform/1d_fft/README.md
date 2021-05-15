@@ -21,3 +21,7 @@ And the components of fft
 <img src="https://github.com/popikeyshen/all/blob/main/fourier_transform/1d_fft/components.png" width = 40% />
 </p>
 
+Where M is a matrix with components of every frequency with imagine part
+<p align="center"> 
+<img src="https://github.com/popikeyshen/all/blob/main/fourier_transform/1d_fft/component1.png" width = 30% />
+</p>
