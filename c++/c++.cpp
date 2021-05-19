@@ -5,7 +5,7 @@
 using namespace std;
 int main()
 {
-	// асоциативные контейнеры set, map
+	// Асоциативный контейнер set
 
 	//множества #include <set>
 	//гарантируется сортировка и уникальность, быстрый поиск
@@ -19,9 +19,13 @@ int main()
 	cout<<mn.size()<<endl;
 	cout<< mn.count("Ania") <<endl;
 
+	// Асоциативный контейнер map
 	map< vector<string>, int > m;
 	vector<string> stations;
+	// получить значитени
+	//m.find(stations)->second;
 	//m[stations]=n;
+	// получить размер
 	cout<<m.size();
 
 	return 0;
