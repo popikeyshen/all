@@ -2,9 +2,15 @@
 #include <algorithm>
 #include <iostream>
 
-bool gt(int x)
+bool gt(int x)  // count
 {
 	return x>3;
+}
+
+bool gt(int x1, int x2)  // sort
+{
+	
+	return x1>x2;
 }
 
 using namespace std;
