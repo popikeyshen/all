@@ -19,7 +19,7 @@ Example for 3d gradient (widht,height,channel) of an simple image
 
 <p align="center"> 
 <img src="gradx2d.png" width = 30% />
-<img src="gradx2y.png" width = 30% />
-<img src="gradx2z.png" width = 30% />
+<img src="grady2d.png" width = 30% />
+<img src="gradz2d.png" width = 30% />
 </p>
 
