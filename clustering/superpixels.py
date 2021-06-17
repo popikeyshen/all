@@ -13,7 +13,7 @@ args = vars(ap.parse_args())
 # load the image and convert it to a floating point data type
 image = img_as_float(io.imread(args["image"]))
 # loop over the number of segments
-for numSegments in (10,20):
+for numSegments in (5,10):
 	# apply SLIC and extract (approximately) the supplied number
 	# of segments
 	segments = slic(image, n_segments = numSegments, sigma = 5)
