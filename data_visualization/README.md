@@ -1,5 +1,5 @@
 
-# 3D vector visualization
+# 3D points visualization
 
 <p align="center"> <img src="cat.jpg"  width = 40%  /></p>
 
