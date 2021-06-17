@@ -30,7 +30,7 @@ But not good for image like this cat.
 
 This works simmilar to K-meants but with limited xy regions.  O(N)
 
-<p align="center"> <img src="/superpixels_5_segments.png"  /></p>
+<p align="center"> <img src="/clustering/superpixels_5_segments.png"  /></p>
 <p align="center"> <img src="/clustering/slic.jpg"  /></p>
 
 https://core.ac.uk/download/pdf/147983593.pdf
