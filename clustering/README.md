@@ -26,6 +26,15 @@ It has a complexity O(T*n^2). Cause it makes a bad joke for computer vision task
 Density-Based Spatial Clustering of Applications with Noise. Finds core samples of high density and expands clusters from them. Good for data which contains clusters of similar density.
 But not good for image like this cat.
 
+# Simple Linear Iterative Clustering (SLIC) or Superpixels
+
+This works simmilar to K-meants but with limited xy regions.  O(N)
+
+<p align="center"> <img src="/superpixels_5_segments.png"  /></p>
+<p align="center"> <img src="/clustering/slic.jpg"  /></p>
+
+https://core.ac.uk/download/pdf/147983593.pdf
+
 # More
 
 Many of algorithms can be found in sklearn https://scikit-learn.org/stable/modules/clustering.html
