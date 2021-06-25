@@ -32,6 +32,10 @@ def show3d(img):
 	plt.show()
 
 
+import torch
+import torch.nn as nn
+### torch fast big size convolution
+
 if __name__ == "__main__":
 
 	img = cv2.imread("cat.jpg")
