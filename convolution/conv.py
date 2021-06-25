@@ -31,7 +31,7 @@ def scipy_3x3_conv():
 	fig.show()
 
 def scipy_big_conv(img, kernel):
-	print(img.shape, kernel.shape)
+	#print(img.shape, kernel.shape)
 	grad = signal.convolve2d(img, kernel,  mode='same') # boundary='symm',
 
 
@@ -62,7 +62,7 @@ def torch_100x100_conv(image,kern):
 	kernel = kern.copy()
 
 	### create 2d kernel 
-	conv = nn.Conv2d( 1, 1, 100, stride=1, padding=50)
+	conv = nn.Conv2d( 1, 1, 50, stride=1, padding=50)
 
 	kernel = torch.Tensor(kernel)
 	kernel = torch.nn.Parameter( kernel )
@@ -72,6 +72,26 @@ def torch_100x100_conv(image,kern):
 	img = torch.Tensor(img)#.unsqueeze_(0)
 	r = conv(img)
 	res = r.detach().numpy()[0][0]
+
+	#print(res.shape)
+	#plt.imshow(res)
+	#plt.show()
+
+def torch_100x100_conv_cuda(image,kern):
+	img    = image.copy()
+	kernel = kern.copy()
+
+	### create 2d kernel 
+	conv = nn.Conv2d( 1, 1, 50, stride=1, padding=50)
+
+	kernel = torch.Tensor(kernel)
+	kernel = torch.nn.Parameter( kernel )
+	conv.weight = kernel
+	#print(conv, conv.weight)
+
+	img = torch.Tensor(img)#.unsqueeze_(0)
+	r = conv(img).cuda()
+	res = r.detach().cpu().numpy()[0][0]
 
 	#print(res.shape)
 	#plt.imshow(res)
@@ -95,9 +115,9 @@ if __name__ == "__main__":
 			   [2,  1, 2], 
 			   [0,  0, 0]]]]
 
-	
+	print(torch.cuda.is_available())
 
-	img = np.ones((1,1,200,200), np.uint8)
+	img = np.ones((1,1,50,50), np.uint8)
 	img[0,0,10,10] = 200
 	img[0,0,11,10] = 200
 	img[0,0,20,20] = 200
@@ -105,7 +125,7 @@ if __name__ == "__main__":
 
 	torch_3x3_conv(img,kernel)
 
-	kernel = np.ones((1,1,100,100), np.uint8)
+	kernel = np.ones((1,1,50,50), np.uint8)
 	kernel[0,0,10,10] = 200
 	kernel[0,0,11,10] = 200
 	kernel[0,0,20,20] = 200
@@ -116,9 +136,13 @@ if __name__ == "__main__":
 	t1 = time.time()
 	print(t1-t0)
 
+	#t0 = time.time()
+	#torch_100x100_conv_cuda(img,kernel)
+	#t1 = time.time()
+	#print(t1-t0)
 
 
-	img = np.ones((200,200), np.uint8)
+	img = np.ones((50,50), np.uint8)
 	img[10,10] = 200
 	img[11,10] = 200
 	img[20,20] = 200
@@ -128,4 +152,11 @@ if __name__ == "__main__":
 	scipy_big_conv(img,img)
 	t1 = time.time()
 	print(t1-t0)
-	
+
+	sizes=[200,100,50]
+	time1=[0.57,0.15,0.051]
+	time2=[2.05,0.14,0.013]
+
+	plt.plot(sizes,time1,label='pytorch')
+	plt.plot(sizes,time2,label='scipy')
+	plt.show()
