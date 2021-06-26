@@ -17,6 +17,29 @@ def block_thrashold(image, block=[50,50,150],size =[50,50,50]):
 	return img
 
 
+## 3 types of thr from opencv documentation
+# documentation https://docs.opencv.org/4.5.2/d7/d4d/tutorial_py_thresholding.html
+# source https://github.com/opencv/opencv/blob/master/modules/imgproc/src/thresh.cpp
+# for adaptive threshold we use not the mean full image threshold, but we have cell mean
+def adaptive_gaussian():
+	import cv2 as cv
+	import numpy as np
+	from matplotlib import pyplot as plt
+	img = cv.imread('sudoku.png',0)
+	#img = cv.medianBlur(img,5)
+	ret,th1 = cv.threshold(img,127,255,cv.THRESH_BINARY)
+	th2 = cv.adaptiveThreshold(img,255,cv.ADAPTIVE_THRESH_MEAN_C,     cv.THRESH_BINARY,11,2)
+	th3 = cv.adaptiveThreshold(img,255,cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY,11,2)
+	titles = ['Original Image', 'Global Thresholding (v = 127)',
+		    'Adaptive Mean Thresholding', 'Adaptive Gaussian Thresholding']
+	images = [img, th1, th2, th3]
+	for i in range(4):
+	    plt.subplot(2,2,i+1),plt.imshow(images[i],'gray')
+	    plt.title(titles[i])
+	    plt.xticks([]),plt.yticks([])
+	plt.show()
+
+
 import time
 if __name__ == "__main__":
 
@@ -30,3 +53,5 @@ if __name__ == "__main__":
 
 	cv2.imshow("",thrasholded)
 	cv2.waitKey(0)
+
+	adaptive_gaussian()
