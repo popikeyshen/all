@@ -87,7 +87,7 @@ def SMA(vector):
 	l, = vector.shape
 	#print(l)
 
-	window =20
+	window =40
 	sma = []
 	for i in range(l-window):
 		v = vector[i:i+window]
@@ -103,6 +103,25 @@ def SMA(vector):
 	ax[1].set_title("SMA filtered, window = 20")
 	plt.show()
 
+def sinc_filter(vector, size=80):
+	## create sinc window
+	x = np.linspace(-4, 4, size)
+	win = np.sinc(x)/ (size/8.7)
+
+	## process
+	res = np.convolve(vector, win)
+
+	## padding
+	l = len(res)
+	res = res[int(size/2):l-int(size/2)]
+
+	## visualize
+	plt.plot(vector)
+	plt.show()
+	plt.plot(res)
+	plt.show()
+
+
 if __name__ == "__main__":
 
 	#with open('signal.npy', 'wb') as f:
@@ -112,6 +131,7 @@ if __name__ == "__main__":
 		data_vector = np.load(f)
 
 
-	fft_filtering(data_vector)
-	SMA(data_vector)
+	#fft_filtering(data_vector)
+	#SMA(data_vector)
+	sinc_filter(data_vector)
 

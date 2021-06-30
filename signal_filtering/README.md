@@ -10,3 +10,7 @@
 2) SMA high frequency filter
 
 <p align="center"> <img src="sma.png"  width = 50%  /></p>
+
+3) Sinc filter with window size 20 and 80
+
+<p align="center"> <img src="sig.png"  width = 50%  /><img src="sinc20.png"  width = 50%  /><img src="sinc80.png"  width = 50%  /></p>
