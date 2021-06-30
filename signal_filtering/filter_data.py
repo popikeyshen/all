@@ -82,6 +82,27 @@ def fft_filtering(vector, vis=True):
 	mean = np.mean(magnitude)
 	print("high frequency mean", mean)
 
+
+def SMA(vector):
+	l, = vector.shape
+	#print(l)
+
+	window =20
+	sma = []
+	for i in range(l-window):
+		v = vector[i:i+window]
+		v = np.average(v)
+		sma.append(v)
+	
+
+
+	(fig, ax) = plt.subplots(1, 2, )
+	ax[0].plot(vector)
+	ax[0].set_title("signal")
+	ax[1].plot(sma)
+	ax[1].set_title("SMA filtered, window = 20")
+	plt.show()
+
 if __name__ == "__main__":
 
 	#with open('signal.npy', 'wb') as f:
@@ -92,5 +113,5 @@ if __name__ == "__main__":
 
 
 	fft_filtering(data_vector)
-	#calman_filter():
-	#fft_filter():
+	SMA(data_vector)
+
