@@ -123,7 +123,7 @@ def sinc_filter(vector, size=80):
 
 
 from scipy import ndimage, misc
-def median_filter(vector, size=80):
+def median_filter(vector, size=10):
 	res = ndimage.median_filter(vector, size=size)
 
 	plt.plot(vector)
