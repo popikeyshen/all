@@ -122,6 +122,15 @@ def sinc_filter(vector, size=80):
 	plt.show()
 
 
+from scipy import ndimage, misc
+def median_filter(vector, size=80):
+	res = ndimage.median_filter(vector, size=size)
+
+	plt.plot(vector)
+	plt.show()
+	plt.plot(res)
+	plt.show()
+
 if __name__ == "__main__":
 
 	#with open('signal.npy', 'wb') as f:
@@ -133,5 +142,6 @@ if __name__ == "__main__":
 
 	#fft_filtering(data_vector)
 	#SMA(data_vector)
-	sinc_filter(data_vector)
+	#sinc_filter(data_vector)
+	median_filter(data_vector)
 
