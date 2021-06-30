@@ -13,4 +13,4 @@
 
 3) Sinc filter with window size 20 and 80
 
-<p align="center"> <img src="sig.png"  width = 50%  /><img src="sinc20.png"  width = 50%  /><img src="sinc80.png"  width = 50%  /></p>
+<p align="center"> <img src="sig.png"  width = 30%  /><img src="sinc20.png"  width = 30%  /><img src="sinc80.png"  width = 30%  /></p>
