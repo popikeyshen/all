@@ -38,3 +38,9 @@ https://core.ac.uk/download/pdf/147983593.pdf
 # More
 
 Many of algorithms can be found in sklearn https://scikit-learn.org/stable/modules/clustering.html
+
+# Clustering aproaches links
+
+```
+https://www.hindawi.com/journals/mpe/2016/3180357/
+```
