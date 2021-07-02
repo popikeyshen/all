@@ -12,6 +12,6 @@ https://keras.io/api/layers/
 ```
 <p align="center"> <img src="cat.jpg"  width = 40%  /> </p>
 
-avgpooling, maxpooling, medianpooling
-<p align="center"> <img src="avgpool10x.png"  width = 30%  /><img src="maxpool10x.png"  width = 30%  /><img src="medianpool10x.png"  width = 30%  />   </p>
+		avgpooling, maxpooling, medianpooling
+<p align="center"> <img src="avgpool10x.png"  width = 20%  /><img src="maxpool10x.png"  width = 20%  /><img src="medianpool10x.png"  width = 20%  />   </p>
 
