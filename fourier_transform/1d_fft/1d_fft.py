@@ -72,11 +72,11 @@ def DFT_slow(x):
 	return res
 
 
-
-signal1, signal2 = get_signals()
-fft3 = np.fft.fft(signal2)
-fft3 = DFT_slow(signal2)
-decompose(fft3)
+if __name__ == "__main__":
+	signal1, signal2 = get_signals()
+	fft3 = np.fft.fft(signal2)
+	fft3 = DFT_slow(signal2)
+	decompose(fft3)
 
 
 
