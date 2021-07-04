@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 def create_function1():
 
-	x = np.linspace(0, 2*np.pi, 100)
+	x = np.linspace(0, 2*np.pi, 1000)
 	sin1 = np.sin(3*x)
 	sin2 = np.sin(2*x)
 	signal =  sin1 + sin2 + 3
@@ -66,7 +66,7 @@ def test2(s):
 	### gradient to find extrema
 	d0 = np.gradient(s)
 	dd = np.gradient(d0)
-	plt.plot(d0)
+	plt.plot(d0*10)
 	#plt.plot(dd*10)
 
 
@@ -86,11 +86,12 @@ def test2(s):
 
 	### get extrema points
 	cp = []
-	for i in range(len(s-2)):
-		if ( d0[i]<0 != d0[i+1]<0  ):
-			cp.append(1)
+	for i in range(len(s)):
+		if ( d0[i]<0 != d0[i]<=0  ):
+			cp.append(10)
 		else:
 			cp.append(0)
+	cp = np.gradient(cp)
 
 	null = np.linspace(0, 0, 100)
 	plt.plot(null )
