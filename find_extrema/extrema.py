@@ -86,8 +86,8 @@ def test2(s):
 
 	### get extrema points
 	cp = []
-	for i in range(len(s-1)):
-		if ( d0[i]<0 != d0[i]<0 ):
+	for i in range(len(s-2)):
+		if ( d0[i]<0 != d0[i+1]<0  ):
 			cp.append(1)
 		else:
 			cp.append(0)
