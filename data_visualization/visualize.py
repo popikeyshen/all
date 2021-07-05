@@ -32,6 +32,16 @@ def show3d(img):
 	plt.show()
 
 
+def stem_vis():
+	func1 = np.array([0,1,2,3,4,5,6,7,8,9,10])
+	func2 = np.array([0,1,2,3,4,5,4,3,2,1,0])
+
+	index = range(11)
+
+	plt.stem(index, func1, 'b', markerfmt='bo', label='f1')
+	plt.stem(index, func2, 'r', markerfmt='ro', label='f2')
+	plt.show()
+
 import torch
 import torch.nn as nn
 ### torch fast big size convolution
@@ -46,3 +56,4 @@ if __name__ == "__main__":
 	img = cv2.resize(img,(w,h))
 
 	#show3d(img)
+	stem_vis()
