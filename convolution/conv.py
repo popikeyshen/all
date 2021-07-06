@@ -6,6 +6,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import cv2
 
+import torch
+import torch.nn as nn
+
 # scipy conv
 def scipy_3x3_conv():
 
@@ -36,8 +39,7 @@ def scipy_big_conv(img, kernel):
 
 
 
-import torch
-import torch.nn as nn
+
 def torch_3x3_conv(img,kernel):
 
 	### create 2d kernel 
