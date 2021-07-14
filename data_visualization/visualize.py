@@ -77,4 +77,5 @@ if __name__ == "__main__":
 	img = cv2.resize(img,(w,h))
 
 	#show3d(img)
-	stem_vis()
+	#stem_vis()
+	title()
