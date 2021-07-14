@@ -65,9 +65,7 @@ def title():
 	plt.show()
 
 
-import torch
-import torch.nn as nn
-### torch fast big size convolution
+
 
 if __name__ == "__main__":
 
