@@ -41,9 +41,9 @@ print(fft)
 
 ### to have 10 cm area 
 ### we need f = c/l (l = c/f)
-### f = c/l = 3*10^8/0.1 = 3*10^7 Hz = 30 MHz signal f1 to become 5     cm hight voltage area
-###                                    60 MHz signal f2 to become 2.5   cm hight voltage area
-###                                   120 MHz signal f3 to become 1.25  cm hight voltage area
+### f = c/l = 3*10^8/0.1 = 3*10^9 Hz = 3000 MHz signal f1 to become 5     cm hight voltage area
+###                                    6000 MHz signal f2 to become 2.5   cm hight voltage area
+###                                   12000 MHz signal f3 to become 1.25  cm hight voltage area
 f = 30 
 l = 5
 for i in range(10):
