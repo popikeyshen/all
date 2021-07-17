@@ -13,4 +13,4 @@ There the result of 2 transceivers will be
 res = signal1 - signal2
 ```
 
-
+But what if we wanna to have some difficult than sin wave? I'm try to found
