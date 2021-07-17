@@ -15,10 +15,10 @@ res = signal1 - signal2
 
 But what if we wanna to have some difficult than sin wave? Like local peak staning area
 
-<p align="center"> <img src="st1.gif"  width = 40%  /></p>
+<p align="center"> <img src="st1.png"  width = 40%  /></p>
 
 Then we need an wave with lenght of space that we need as first harmonic
-<p align="center"> <img src="s1.gif"  width = 40%  /></p>
+<p align="center"> <img src="s1.png"  width = 40%  /></p>
 As example for local peak for 10cm lenght 
 60  	MHz signal f1 to become 2.5  		cm hight voltage area
 120  	MHz signal f1 to become 1.25  		cm hight voltage area
@@ -30,6 +30,6 @@ As example for local peak for 10cm lenght
 7680  	MHz signal f1 to become 0.01953125  	cm hight voltage area
 15360  	MHz signal f1 to become 0.009765625  	cm hight voltage area
 30720  	MHz signal f1 to become 0.0048828125  	cm hight voltage area
-<p align="center"> <img src="s2.gif"  width = 40%  /></p>
-<p align="center"> <img src="s3.gif"  width = 40%  /></p>
-<p align="center"> <img src="s5.gif"  width = 40%  /></p>
+<p align="center"> <img src="s2.png"  width = 40%  /></p>
+<p align="center"> <img src="s3.png"  width = 40%  /></p>
+<p align="center"> <img src="s5.png"  width = 40%  /></p>
