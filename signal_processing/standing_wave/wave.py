@@ -77,11 +77,28 @@ def wave2():
 			cv2.waitKey(100)
 
 
+def wave3():
+
+	x = np.linspace(0, 4*np.pi, 200)
+	phi = 0
+
+	for t in range(0,100):
+		t = t/5
+		phi +=0.1
+			
+		s1 =  np.sin(x+t)	
+		s2 =  np.sin(x+t+phi)
+		res = s1+s2
+
+		plt.plot(s1)
+		plt.plot(s2)
+		plt.plot(res)
+		plt.show()	
 
 
 if __name__ == '__main__':
 	#wave1()
-	wave2()
-
+	#wave2()
+	wave3()
 
 
