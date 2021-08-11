@@ -1,6 +1,6 @@
 ### links to undarstand c++ standarts 
 
-1) c++11 vs c++11
+1) compare standarts: c++11 vs c++14
 
 https://habr.com/ru/post/182920/
 
