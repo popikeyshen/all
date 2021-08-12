@@ -18,3 +18,7 @@ PyPPM
 ### MRI microscopy
 
 https://arxiv.org/pdf/cond-mat/0702664.pdf
+
+https://www.mdpi.com/2075-4418/11/6/1012/pdf
+
+https://opus.bibliothek.uni-wuerzburg.de/opus4-wuerzburg/frontdoor/deliver/index/docId/2622/file/Armin_Purea_Dissertation_2008.pdf
