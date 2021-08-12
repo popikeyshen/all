@@ -1,5 +1,5 @@
 
-MRI
+### MRI
 
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7538153/pdf/main.pdf
 
@@ -15,3 +15,6 @@ Simmilar
 
 PyPPM
 
+### MRI microscopy
+
+https://arxiv.org/pdf/cond-mat/0702664.pdf
