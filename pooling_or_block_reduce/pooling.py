@@ -14,6 +14,7 @@ def skimage_reduce(img):
 
 	#reduced = skimage.measure.block_reduce(img, block_size, np.max)
 	#reduced = skimage.measure.block_reduce(img, block_size, np.average)
+	#reduced = skimage.measure.block_reduce(img, block_size, np.median)
 	reduced = skimage.measure.block_reduce(img, block_size, np.median)
 
 
@@ -32,29 +33,40 @@ def skimage_reduce(img):
 
 
 def my_reduce(img):
+	block_size=5
+	kernel_size = 5
+
 
 	h,w,c = img.shape
+	print(h,w)	
 
-	block_size=5
-	for y in range(0,h,block_size)[:5]:
-		for x in range(0,w,block_size)[:5]:	
+	#height = int(h/block_size)
+	#width  = int(w/block_size)
+	#res = np.zeros((height,width,3), np.uint8)
+	res = img.copy()
 
-			crop = img[y:block_size,x:block_size]
 
-			median = np.median(crop,axis=(0,1))
-			median = np.array([[median]]).astype(np.uint8)
-			median = cv2.resize(median,(block_size,block_size), interpolation = cv2.INTER_NEAREST)
-			
-			cv2.imshow("crop",  crop)
-			cv2.imshow("median",median)
-			cv2.waitKey(0)
+	for y in range(0,h,block_size)[:-1]:
+		for x in range(0,w,block_size)[:-1]:	
+
+
+			crop = img[y:y+block_size,x:x+block_size].copy()
+
+			### median
+			#median = np.median(crop,axis=(0,1))
+			#median = np.array([[median]]).astype(np.uint8)
+			#median = cv2.resize(median,(block_size,block_size), interpolation = cv2.INTER_NEAREST)
+			#res[y:y+block_size,x:x+block_size]=median
+
 
 			### mode
-			#from scipy.stats import mode
-			#m = mode(crop,axis=(0,1))
-			#print(m)
-			#counts = np.bincount(crop,axis=(0,1))
-			#print(np.argmax(counts))
+			crop = crop.reshape(-1, 3)
+			unique, counts = np.unique(crop, return_counts = True, axis = 0 )
+			mode = unique[ counts.argmax()]
+			res[y:y+block_size,x:x+block_size] = mode
+
+	cv2.imshow("res",res)
+	cv2.waitKey(0)
 
 
 if __name__ == "__main__":
