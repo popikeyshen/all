@@ -1,4 +1,5 @@
-# S.O.L.I.D принципы с примерами на Python  https://gist.github.com/pavel-loginov-dev/8f3ef63e265c15763d169eff4627265d
+# S.O.L.I.D принципы с примерами на Python  
+https://gist.github.com/pavel-loginov-dev/8f3ef63e265c15763d169eff4627265d
 
 <details>
 <summary>Примечания</summary>
