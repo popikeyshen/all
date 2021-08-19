@@ -20,15 +20,15 @@ def gen():
 
 
 
-print('1', next(gen()))
-print('2', next(gen()))
-print('3', next(gen()))
-print('4', next(gen()))
+print('as function() ', next(gen()))
+print('as function() ', next(gen()))
+print('as function() ', next(gen()))
+print('as function() ', next(gen()))
 
 a=gen()
-print('a 1', next(a))
-print('a 2', next(a))
-print('a 3', next(a))
+print('as variable ', next(a))
+print('as variable ', next(a))
+print('as variable ', next(a))
 #print('a 4', next(a))  # error
 
 
@@ -50,7 +50,10 @@ def my_gen():
 
 # Using for loop
 for item in my_gen():
-    print(item)
+    print('as function() ',item)
 
-
+a = my_gen()
+# Using for loop
+for item in a:
+    print('as variable ',item)
 
