@@ -68,6 +68,6 @@ if __name__ == "__main__":
 	plt.plot(res[:,0],res[:,1], '.')
 	plt.show()
 
-
+## https://www.askpython.com/python/examples/principal-component-analysis
 
 

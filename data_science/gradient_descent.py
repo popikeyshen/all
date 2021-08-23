@@ -113,4 +113,10 @@ if __name__ == '__main__':
     draw_chart(minimum, get_grid(0.05))
 
 
+
+# https://neurohive.io/ru/osnovy-data-science/gradient-descent/
+# https://habr.com/ru/post/467185/
 # https://habr.com/ru/post/547424/
+
+
+
