@@ -30,12 +30,15 @@ def PCA_from_scratch(X , num_components):
      
     #Step-1
     X_meaned = X - np.mean(X , axis = 0)
-     
+    print('mean ',X_meaned)     
+
     #Step-2
     cov_mat = np.cov(X_meaned , rowvar = False)
+    print('cov_mat ',cov_mat)     
      
     #Step-3
     eigen_values , eigen_vectors = np.linalg.eigh(cov_mat)
+    print('eigen values ',eigen_values ,'eigen vectors ', eigen_vectors)  
      
     #Step-4
     sorted_index = np.argsort(eigen_values)[::-1]

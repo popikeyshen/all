@@ -83,4 +83,8 @@ print(dist)
 det = LA.det(dist )
 print(det)
 
+### Loss
+### margin based loss
+### https://temofeev.ru/info/articles/ne-tsarskaya-u-tebya-fizionomiya-funktsii-poter-dlya-zadachi-raspoznavaniya-lits/
+
 

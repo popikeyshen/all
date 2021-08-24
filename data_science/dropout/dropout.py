@@ -236,3 +236,8 @@ for epoch in range(15):
 
 print('Finished Training')
 wandb.finish()
+
+
+
+
+
