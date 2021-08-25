@@ -13,4 +13,5 @@ What is here:
 6) What's for is python self
 7) *args **kwargs in python
 8) Official documentation link https://docs.python.org/3.6/library/
+
 etc..
