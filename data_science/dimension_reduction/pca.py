@@ -26,19 +26,17 @@ def PCA_sklearn(X, n):
 	return pc1
 
 
-def PCA_from_scratch(X , num_components):
+def PCA_from_scratch(X , num_components, show=True):
      
     #Step-1
     X_meaned = X - np.mean(X , axis = 0)
-    print('mean ',X_meaned)     
 
     #Step-2
     cov_mat = np.cov(X_meaned , rowvar = False)
-    print('cov_mat ',cov_mat)     
      
     #Step-3
     eigen_values , eigen_vectors = np.linalg.eigh(cov_mat)
-    print('eigen values ',eigen_values ,'eigen vectors ', eigen_vectors)  
+
      
     #Step-4
     sorted_index = np.argsort(eigen_values)[::-1]
@@ -50,7 +48,21 @@ def PCA_from_scratch(X , num_components):
      
     #Step-6
     X_reduced = np.dot(eigenvector_subset.transpose() , X_meaned.transpose() ).transpose()
-     
+
+    if show == True:
+        print('X \n', X)
+        print('np.mean \n', np.mean(X , axis = 0))
+        print('mean \n', X_meaned) 
+        print('cov_mat \n',cov_mat)     
+        print('eigen values \n',eigen_values)  
+        print('eigen vectors \n', eigen_vectors) 
+
+        print('sorted_index \n', sorted_index) 
+        print('sorted_eigenvalue \n', sorted_eigenvalue) 
+        print('sorted_eigenvectors \n', sorted_eigenvectors) 
+
+        print('eigenvector_subset \n', eigenvector_subset) 
+
     return X_reduced
 
 
@@ -72,5 +84,5 @@ if __name__ == "__main__":
 	plt.show()
 
 ## https://www.askpython.com/python/examples/principal-component-analysis
-
+## https://numpy.org/doc/stable/reference/generated/numpy.linalg.eigh.html
 
