@@ -10,14 +10,14 @@ My realisations of some algorithms to learn
 6) block reduce
 7) python examples
 8) c++ examples
-9) Data scienct:
+9) Data science:
 
-	a. svm, svr
-	b. random forest
-	c. PCA
-	d. bias, variance, tradeoff, etc..
-	e. gradient descent
-	f. SQL
-	g. more..
+	1. svm, svr
+	2. random forest
+	3. PCA
+	4. bias, variance, tradeoff, etc..
+	5. gradient descent
+	6. SQL
+	7. more..
 
 10) etc ...
