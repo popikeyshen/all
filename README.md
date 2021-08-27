@@ -11,11 +11,13 @@ My realisations of some algorithms to learn
 7) python examples
 8) c++ examples
 9) Data scienct:
-	a) svm, svr
-	b) random forest
-	c) PCA
-	d) bias, variance, tradeoff, etc..
-	e) gradient descent
-	f) SQL
-	g) more..
+
+	a. svm, svr
+	b. random forest
+	c. PCA
+	d. bias, variance, tradeoff, etc..
+	e. gradient descent
+	f. SQL
+	g. more..
+
 10) etc ...
