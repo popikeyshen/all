@@ -83,7 +83,7 @@ def gradient_descent(best_estimates, is_x):
 
 
 def find_minimum():
-    return gradient_descent(gradient_descent(pick_estimates(calculate_flip_points()), False), True)
+    return gradient_descent(  gradient_descent(pick_estimates(calculate_flip_points()), False), True)
 
 
 def get_grid(grid_step):
@@ -109,8 +109,10 @@ def draw_chart(point, grid):
 
 if __name__ == '__main__':
     min_x, min_y = find_minimum()
+    #print(min_x, min_y)
     minimum = (min_x, min_y, differentiable_function(min_x, min_y))
-    draw_chart(minimum, get_grid(0.05))
+    print(minimum)
+    draw_chart(minimum, get_grid(0.1))
 
 
 
