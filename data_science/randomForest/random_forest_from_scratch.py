@@ -25,12 +25,16 @@ class RandomForest:
         for _ in range(self.n_trees):
             tree = DecisionTree(min_samples_split=self.min_samples_split, max_depth=self.max_depth, n_feats=self.n_feats)
             X_samp, y_samp = bootstrap_sample(X, y)
+            #print( 'X, y',X, y )
+            #print( 'after bootstrap', X_samp, y_samp )
             tree.fit(X_samp, y_samp)
             self.trees.append(tree)
 
     def predict(self, X):
         tree_preds = np.array([tree.predict(X) for tree in self.trees])
         tree_preds = np.swapaxes(tree_preds, 0, 1)
+
+        print('tree_preds',tree_preds)
         y_pred = [most_common_label(tree_pred) for tree_pred in tree_preds]
         return np.array(y_pred)
 

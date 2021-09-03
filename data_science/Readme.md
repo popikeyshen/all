@@ -7,6 +7,11 @@
  etc..
 
 
+### Links
+
+Bagging, boosting, stacking
+https://neurohive.io/ru/osnovy-data-science/ansamblevye-metody-begging-busting-i-steking/
+
 ### Log loss
 
 about log loss - here
