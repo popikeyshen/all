@@ -6,17 +6,17 @@ But can be not sensitive to little details. Cause reconfiguration of every clust
 Examples
 
 <p align="center"> 
-<img src="https://github.com/popikeyshen/all/blob/main/clustering/cat.jpg" width = 40% />  <img src="https://github.com/popikeyshen/all/blob/main/clustering/cat_res.png" width = 40% /> 
+<img src="cat.jpg" width = 40% />  <img src="cat_res.png" width = 40% /> 
 </p>
 
-<p align="center"> <img src="https://github.com/popikeyshen/all/blob/main/clustering/k-means.jpg"  /></p>
+<p align="center"> <img src="k-means.jpg"  /></p>
 
 # MeanShift
 
 Mean shift clustering using a flat kernel.
 Mean shift clustering aims to discover “blobs” in a smooth density of samples. It is a centroid-based algorithm, which works by updating candidates for centroids to be the mean of the points within a given region. These candidates are then filtered in a post-processing stage to eliminate near-duplicates to form the final set of centroids.
 
-<p align="center"> <img src="https://github.com/popikeyshen/all/blob/main/clustering/mean-shift.png"  /></p>
+<p align="center"> <img src="mean-shift.png"  /></p>
 
 It has a complexity O(T*n^2). Cause it makes a bad joke for computer vision task.
 
@@ -30,8 +30,8 @@ But not good for image like this cat.
 
 This works simmilar to K-meants but with limited xy regions.  O(N)
 
-<p align="center"> <img src="/clustering/superpixels_5_segments.png"  width = 40% /></p>
-<p align="center"> <img src="/clustering/slic.jpg"  /></p>
+<p align="center"> <img src="superpixels_5_segments.png"  width = 40% /></p>
+<p align="center"> <img src="slic.jpg"  /></p>
 
 https://core.ac.uk/download/pdf/147983593.pdf
 
