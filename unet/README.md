@@ -16,3 +16,5 @@ an encoder and co-learn simultaneously using deep supervision;
 varying semantic scales at the decoder sub-networks, leading
 to a highly flexible feature fusion scheme; 
 3. devising a pruning scheme to accelerate the inference speed of UNet++.
+
+About skip connections [https://theaisummer.com/skip-connections/]
