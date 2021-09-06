@@ -1,4 +1,4 @@
-
+# https://www.kaggle.com/c/airbus-ship-detection
 
 import os
 import random
@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 
 from sklearn.model_selection import train_test_split
-from sklearn.externals import joblib
+import joblib
 
 from skimage.morphology import binary_opening, disk, label
 
@@ -26,13 +26,13 @@ from torch.utils.data import DataLoader, Dataset
 
 import torchvision.transforms as transforms
 
-train_dpath = '../input/train/'
-test_dpath = '../input/test/'
+train_dpath = '/media/popikeyshen/47B598FF55E613F2/ship/train_v2/'
+test_dpath = '/media/popikeyshen/47B598FF55E613F2/ship/train_v2/'
 
-anno_fpath = '../input/train_ship_segmentations.csv'
+anno_fpath = '/media/popikeyshen/47B598FF55E613F2/ship/train_ship_segmentations_v2_10.csv' #'../input/train_ship_segmentations.csv'
 bst_model_fpath = 'model/bst_unet.model'
 
-sample_submission_fpath = '../input/sample_submission.csv'
+sample_submission_fpath = '/media/popikeyshen/47B598FF55E613F2/ship/sample_submission_v2.csv' #'../input/sample_submission.csv'
 submission_fpath = 'submission.csv'
 
 excluded_filenames = ['6384c3e78.jpg', ]
@@ -44,8 +44,10 @@ annos = annos[~annos['ImageId'].isin(excluded_filenames)]
 annos['EncodedPixels_flag'] = annos['EncodedPixels'].map(lambda v: 1 if isinstance(v, str) else 0)
 imgs = annos.groupby('ImageId').agg({'EncodedPixels_flag': 'sum'}).reset_index().rename(columns={'EncodedPixels_flag': 'ships'})
 
+print(len(imgs[imgs['ships'] > 0]))
+print(len(imgs[imgs['ships'] == 0]))
 imgs_w_ships = imgs[imgs['ships'] > 0]
-imgs_wo_ships = imgs[imgs['ships'] == 0].sample(20000, random_state=69278)
+imgs_wo_ships = imgs[imgs['ships'] == 0].sample(5, random_state=5)
 
 selected_imgs = pd.concat((imgs_w_ships, imgs_wo_ships))
 selected_imgs['has_ship'] = selected_imgs['ships'] > 0
@@ -346,6 +348,12 @@ class UNet(nn.Module):
 
 
     def reset_params(self):
+        print('modules')
+        for i, m in enumerate(self.modules()):
+            print(i, m)
+        print('end modules')
+
+
         for i, m in enumerate(self.modules()):
             self.weight_init(m)
 
@@ -372,7 +380,7 @@ class param:
     bs = 8
     num_workers = 4
     lr = 0.001
-    epochs = 3
+    epochs = 100
     unet_depth = 5
     unet_start_filters = 8
     log_interval = 70 # less then len(train_dl)
@@ -424,7 +432,9 @@ def get_loss(dl, model):
     for X, y in dl:
         X, y = Variable(X).cuda(), Variable(y).cuda()
         output = model(X)
-        loss += F.cross_entropy(output, y).data[0]
+
+        print(F.cross_entropy(output, y).item())
+        loss += F.cross_entropy(output, y).item()
     loss = loss / len(dl)
     return loss
 
@@ -485,33 +495,6 @@ test_dl = DataLoader(ImgDataset(test_dpath,
                      num_workers=param.num_workers)
 
 
-
-submission = {'ImageId': [], 'EncodedPixels': []}
-
-model.eval()
-for X, fnames in test_dl:
-    X = Variable(X).cuda()
-    output = model(X)
-    for i, fname in enumerate(fnames):
-        mask = F.sigmoid(output[i, 0]).data.cpu().numpy()
-        mask = binary_opening(mask > 0.5, disk(2))
-        mask = Image.fromarray(mask.astype(np.uint8)).resize(original_img_size)
-        mask = np.array(mask).astype(np.bool)
-
-        labels = label(mask)
-        encodings = [rle_encode(labels == k) for k in np.unique(labels[labels > 0])]
-        if len(encodings) > 0:
-            for encoding in encodings:
-                submission['ImageId'].append(fname)
-                submission['EncodedPixels'].append(encoding)
-        else:
-            submission['ImageId'].append(fname)
-            submission['EncodedPixels'].append(None)
-
-
-submission_df = pd.DataFrame(submission, columns=['ImageId', 'EncodedPixels'])
-submission_df.to_csv('submission.csv', index=False)
-submission_df.sample(10)
 
 
 
