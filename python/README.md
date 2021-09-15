@@ -15,3 +15,6 @@ What is here:
 8) Official documentation link https://docs.python.org/3.6/library/
 
 etc..
+
+links:
+1) [https://devpractice.ru/python-lessons/]
