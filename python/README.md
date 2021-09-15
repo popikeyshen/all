@@ -18,3 +18,4 @@ etc..
 
 links:
 1) [https://devpractice.ru/python-lessons/]
+2) [https://tproger.ru/translations/data-structure-time-complexity-in-python/]
