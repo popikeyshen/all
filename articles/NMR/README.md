@@ -9,6 +9,9 @@ https://doc.rero.ch/record/329440/files/RapportFinal.pdf
 
 http://euromedcompany.ru/materialy-po-tomographii/osnovy-mrt/
 
+LimeSDR 
+https://onlinelibrary.wiley.com/doi/epdf/10.1002/cmr.b.21401
+
 Simmilar
 
 "Signalsfrom the Subatomic World: How to Build a Proton Precession Mag-netometer"
