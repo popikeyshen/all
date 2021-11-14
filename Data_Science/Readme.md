@@ -25,4 +25,6 @@ log_loss(y_true, y_pred, eps=1e-15)
 ### Loss functions for image segmentation
 https://github.com/JunMa11/SegLoss
 
+https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient
+
 
