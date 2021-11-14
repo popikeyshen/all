@@ -29,3 +29,7 @@ https://opus.bibliothek.uni-wuerzburg.de/opus4-wuerzburg/frontdoor/deliver/index
 ### MRI Books
 
 http://iht.univ.kiev.ua/virtual-lab/chem/phys-met-chem-comp/story_content/external_files/theory_nmr.pdf
+
+### russian article
+
+https://gorchilin.com/articles/coil/nmr
