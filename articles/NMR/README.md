@@ -9,6 +9,13 @@ https://doc.rero.ch/record/329440/files/RapportFinal.pdf
 
 http://euromedcompany.ru/materialy-po-tomographii/osnovy-mrt/
 
+### articles from my telegram
+https://kpfu.ru/docs/F1097368136/NMR.pdf
+https://kpfu.ru/portal/docs/F27320145/Yakovleva.pdf
+http://web.physics.ucsb.edu/~phys128/experiments/nmr/Pulsed_NMR.pdf
+http://instructor.physics.lsa.umich.edu/adv-labs/NMR/PulsedNMR_ChuppNew.pdf
+https://qudev.phys.ethz.ch/static/content/courses/phys4/studentspresentations/nmr/James_Fundamentals_of_NMR.pdf
+
 LimeSDR 
 https://onlinelibrary.wiley.com/doi/epdf/10.1002/cmr.b.21401
 
