@@ -35,7 +35,10 @@ print(v)
 ### cause the B = 500 000 000 *4*pi / y
 B = 500000000 *2*np.pi / y
 print(B, 'T')  ## 11.74
+## 8 μs to rotate 90º
 
 ## The 500 MHz magnet system comprises a fully persistent 11.74 Tesla high
 ## http://www.ietltd.com/pdf_datasheets/Unshielded%20Inova%20500%20Data%20Sheet.pdf
+## 11.74 ÷ 0.000430 = 27 302
+## 8u * 27 302 = 0.218416s for a 90^ impulse
 
