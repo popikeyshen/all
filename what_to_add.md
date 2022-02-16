@@ -17,4 +17,4 @@ https://neerc.ifmo.ru/wiki/index.php?title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%
 https://e-maxx.ru/bookz/files/cormen.pdf  (Томас Кормен)
 https://ru.coursera.org/learn/algorithms-part1-ru#syllabus
 
-Git cheatshet
+
