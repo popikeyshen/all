@@ -11,6 +11,7 @@ Keras / Tensorflow error:
 Because i need to install 
 
 Go to: https://developer.nvidia.com/rdp/cudnn-archive
+
 Find link for cuDNN v8 and CUDA 11.4: ```Download cuDNN v8.2.4 (September 2nd, 2021), for CUDA 11.4```
 
 And try to install same versions of tensofrlow-gpu and keras
