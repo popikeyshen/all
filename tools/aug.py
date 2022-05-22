@@ -342,9 +342,9 @@ if __name__ == '__main__':
 	#os.mkdir(save_path)
 	
 	aug_data_path = '../drive/MyDrive/yolo/agenerated/true/aug_data/'
-	run_folder('../drive/MyDrive/yolo/agenerated/true/heavy/', 10)
-	run_folder('../drive/MyDrive/yolo/agenerated/true/fura/', 10)
-	run_folder('../drive/MyDrive/yolo/agenerated/true/aug_data/', augmentation=0 )
+	run_folder('../drive/MyDrive/yolo/agenerated/true/heavy/', n=20)
+	run_folder('../drive/MyDrive/yolo/agenerated/true/fura/', n=20)
+	run_folder('../drive/MyDrive/yolo/agenerated/true/aug_data/', n=1, augmentation=0 )
 	
 
 	#save_path = './save/'
