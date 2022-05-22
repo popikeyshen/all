@@ -14,10 +14,10 @@ def file_list(folder = './'):
 	return files
 	
 
-folder_to_files = '../drive/MyDrive/yolo/agenerated/true/save/'
+folder_to_files = '../darknet/save/'
 path_to_list = '../drive/MyDrive/yolo/agenerated/true/'
 
-files = file_list(folder)
+files = file_list(folder_to_files )
 
 # ../drive/MyDrive/yolo/saveV3/0cfcf3a294ed4c0fb3320c5ce57b41e4.jpg
 
