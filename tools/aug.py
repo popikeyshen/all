@@ -4,6 +4,7 @@ import uuid
 import random
 import glob
 import pathlib
+import os
 
 save_path = ''
 aug_data_path = ''
@@ -336,7 +337,10 @@ if __name__ == '__main__':
 	#path = str( pathlib.Path().resolve() )
 	#print(path)
 	
-	save_path = '../drive/MyDrive/yolo/agenerated/true/save/'
+	#save_path = '../drive/MyDrive/yolo/agenerated/true/save/'
+	save_path = '../drive/save/'
+	os.mkdir(save_path)
+	
 	aug_data_path = '../drive/MyDrive/yolo/agenerated/true/aug_data/'
 	run_folder('../drive/MyDrive/yolo/agenerated/true/heavy/', 10)
 	run_folder('../drive/MyDrive/yolo/agenerated/true/fura/', 10)
