@@ -338,8 +338,8 @@ if __name__ == '__main__':
 	#print(path)
 	
 	#save_path = '../drive/MyDrive/yolo/agenerated/true/save/'
-	save_path = '../drive/save/'
-	os.mkdir(save_path)
+	save_path = '../darknet/save/'
+	#os.mkdir(save_path)
 	
 	aug_data_path = '../drive/MyDrive/yolo/agenerated/true/aug_data/'
 	run_folder('../drive/MyDrive/yolo/agenerated/true/heavy/', 10)
