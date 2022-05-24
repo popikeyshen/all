@@ -350,9 +350,9 @@ if __name__ == '__main__':
 	# gdisk2
 	save_path = './save_heavy/'
 	aug_data_path = './yolo/agenerated/true/aug_data/'
-	run_folder('./yolo/agenerated/true/aug_data/heavy/', 10)
-	run_folder('./yolo/agenerated/true/aug_data/fura/', 10)
-	run_folder('./yolo/agenerated/true/aug_data/aug_data/', augmentation=0 )
+	run_folder('./yolo/agenerated/true/heavy/', 10)
+	run_folder('./yolo/agenerated/true/fura/', 10)
+	run_folder('./yolo/agenerated/true/aug_data/', augmentation=0 )
 	
 	# pc
 	#save_path = './save/'
