@@ -338,15 +338,23 @@ if __name__ == '__main__':
 	#print(path)
 	
 	#save_path = '../drive/MyDrive/yolo/agenerated/true/save/'
-	save_path = '../darknet/save/'
+	save_path = './save_heavy/'
 	#os.mkdir(save_path)
 	
-	aug_data_path = '../drive/MyDrive/yolo/agenerated/true/aug_data/'
-	run_folder('../drive/MyDrive/yolo/agenerated/true/heavy/', n=20)
-	run_folder('../drive/MyDrive/yolo/agenerated/true/fura/', n=20)
-	run_folder('../drive/MyDrive/yolo/agenerated/true/aug_data/', n=1, augmentation=0 )
+	# gdisk1
+	#aug_data_path = '../drive/MyDrive/yolo/agenerated/true/aug_data/'
+	#run_folder('../drive/MyDrive/yolo/agenerated/true/heavy/', n=20)
+	#run_folder('../drive/MyDrive/yolo/agenerated/true/fura/', n=20)
+	#run_folder('../drive/MyDrive/yolo/agenerated/true/aug_data/', n=1, augmentation=0 )
 	
-
+	# gdisk2
+	save_path = './save_heavy/'
+	aug_data_path = './yolo/agenerated/true/aug_data/'
+	run_folder('./yolo/agenerated/true/aug_data/heavy/', 10)
+	run_folder('./yolo/agenerated/true/aug_data/fura/', 10)
+	run_folder('./yolo/agenerated/true/aug_data/aug_data/', augmentation=0 )
+	
+	# pc
 	#save_path = './save/'
 	#aug_data_path = './aug_data/'
 	#run_folder('./heavy/', 10)
