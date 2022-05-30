@@ -354,8 +354,8 @@ if __name__ == '__main__':
 	aug_data_path = './yolo/agenerated/true/aug_data/'
 	run_folder('./yolo/agenerated/true/heavy/', 10, augmentation=0)
 	run_folder('./yolo/agenerated/true/fura/', 10, augmentation=0)
-	run_folder('./yolo/agenerated/true/aug_data/' , 5,   augmentation=1)
-	run_folder('./yolo/agenerated/true/false_id0519/',5, augmentation=1 )
+	run_folder('./yolo/agenerated/true/aug_data/' , 1,   augmentation=1)
+	run_folder('./yolo/agenerated/true/false_id0519/',1, augmentation=1 )
 	
 	# pc
 	#save_path = './save/'
