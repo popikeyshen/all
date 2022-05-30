@@ -270,25 +270,27 @@ def augment(frame, rects, augmentation=1):
 			frame, rects = flipud (frame, rects)
 	if random.randint(0, 1):
 			frame, rects = random_resize_hw(frame, rects)
+
+	if random.random() <= koef:  
+			frame = add_image(frame)
 			
 	if augment:	
 
 		koef = 0.2
 			
-		if random.random() <= koef:	
-			frame = cv2.blur(frame,(2,2))
+		#if random.random() <= koef:	
+		#	frame = cv2.blur(frame,(2,2))
 		if random.random() <= koef:
 			frame = sharpen(frame)
 		#if random.randint(0, 1):
 		#	frame = motion_blur(frame)
-		if random.random() <= koef:
-			frame = apply_brightness_contrast(frame)
+		#if random.random() <= koef:
+		#	frame = apply_brightness_contrast(frame)
 		#if random.random() <= koef:
 		#	frame = augment_gaussian(frame)
-		if random.random() <= koef:	
-			frame = add_gaussian_noise(frame)
-		if random.random() <= koef:  
-			frame = add_image(frame)
+		#if random.random() <= koef:	
+		#	frame = add_gaussian_noise(frame)
+
 	
 	return frame, rects
 
@@ -350,9 +352,10 @@ if __name__ == '__main__':
 	# gdisk2
 	save_path = './save_heavy/'
 	aug_data_path = './yolo/agenerated/true/aug_data/'
-	run_folder('./yolo/agenerated/true/heavy/', 10)
-	run_folder('./yolo/agenerated/true/fura/', 10)
-	run_folder('./yolo/agenerated/true/aug_data/', augmentation=0 )
+	run_folder('./yolo/agenerated/true/heavy/', 10, augmentation=0)
+	run_folder('./yolo/agenerated/true/fura/', 10, augmentation=0)
+	run_folder('./yolo/agenerated/true/aug_data/' , augmentation=1)
+	run_folder('./yolo/agenerated/true/false_id0519/', augmentation=1 )
 	
 	# pc
 	#save_path = './save/'
