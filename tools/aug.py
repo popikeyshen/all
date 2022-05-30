@@ -261,7 +261,7 @@ def add_image(frame):
 
 
 def augment(frame, rects, augmentation=1):
-
+	koef = 0.2
 
 	
 	if random.randint(0, 1):
@@ -276,7 +276,7 @@ def augment(frame, rects, augmentation=1):
 			
 	if augment:	
 
-		koef = 0.2
+		
 			
 		#if random.random() <= koef:	
 		#	frame = cv2.blur(frame,(2,2))
@@ -354,8 +354,8 @@ if __name__ == '__main__':
 	aug_data_path = './yolo/agenerated/true/aug_data/'
 	run_folder('./yolo/agenerated/true/heavy/', 10, augmentation=0)
 	run_folder('./yolo/agenerated/true/fura/', 10, augmentation=0)
-	run_folder('./yolo/agenerated/true/aug_data/' , augmentation=1)
-	run_folder('./yolo/agenerated/true/false_id0519/', augmentation=1 )
+	run_folder('./yolo/agenerated/true/aug_data/' , 5,   augmentation=1)
+	run_folder('./yolo/agenerated/true/false_id0519/',5, augmentation=1 )
 	
 	# pc
 	#save_path = './save/'
