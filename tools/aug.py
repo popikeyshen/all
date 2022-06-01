@@ -263,6 +263,7 @@ def add_image(frame):
 def augment(frame, rects, augmentation=1):
 	koef = 0.2
 
+
 	
 	if random.randint(0, 1):
 			frame, rects = fliplr (frame, rects)
@@ -271,17 +272,22 @@ def augment(frame, rects, augmentation=1):
 	if random.randint(0, 1):
 			frame, rects = random_resize_hw(frame, rects)
 
+	sharpen_kernel  = np.array([[-1,-1,-1], [-1,9,-1], [-1,-1,-1]])
+	frame = cv2.filter2D(frame, -1, sharpen_kernel)
+	frame = cv2.medianBlur(frame, 3)
+
 	if random.random() <= koef:  
 			frame = add_image(frame)
+		
 			
-	if augment:	
+	#if augment:	
 
 		
 			
 		#if random.random() <= koef:	
 		#	frame = cv2.blur(frame,(2,2))
-		if random.random() <= koef:
-			frame = sharpen(frame)
+		#if random.random() <= koef:
+		#	frame = sharpen(frame)
 		#if random.randint(0, 1):
 		#	frame = motion_blur(frame)
 		#if random.random() <= koef:
