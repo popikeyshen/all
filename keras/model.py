@@ -43,7 +43,7 @@ def get_keras_net(X,y):
 from tensorflow import keras
 def run_model():
 	with tf.device('/GPU:0'):		
-		model = keras.models.load_model('/home/popikeyshen/da_popika_prod/keras_water_msva_noNorm_timeline3-10.h5')
+		model = keras.models.load_model('model.h5')
 		model.summary()
 		print(model.summary())
 					
