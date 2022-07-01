@@ -272,8 +272,8 @@ def augment(frame, rects, augmentation=1):
 	if random.randint(0, 1):
 			frame, rects = random_resize_hw(frame, rects)
 
-	sharpen_kernel  = np.array([[-1,-1,-1], [-1,9,-1], [-1,-1,-1]])
-	frame = cv2.filter2D(frame, -1, sharpen_kernel)
+	#sharpen_kernel  = np.array([[-1,-1,-1], [-1,9,-1], [-1,-1,-1]])
+	#frame = cv2.filter2D(frame, -1, sharpen_kernel)
 	frame = cv2.medianBlur(frame, 3)
 
 	if random.random() <= koef:  
