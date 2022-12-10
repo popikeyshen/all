@@ -97,8 +97,8 @@ class regressor():
 		return res
 
 if __name__ == "__main__":
-	#img = cv2.imread('/home/popikeyshen/all/cat.jpg')
-	img = cv2.imread('/home/popikeyshen/kiev_google_maps.png')
+	img = cv2.imread('/home/popikeyshen/all/cat.jpg')
+	#img = cv2.imread('/home/popikeyshen/kiev_google_maps.png')
 	
 	X, y = [],[]
 	while(1):

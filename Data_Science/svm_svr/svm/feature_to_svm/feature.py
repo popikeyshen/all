@@ -34,6 +34,61 @@ def get_true_false(img, true_or_false):
 	return X1, y1
 
 
+
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+from sklearn.decomposition import PCA
+
+
+
+def PCA_sklearn(X, n):
+
+	print('PCA...')
+	pca = PCA(n_components=n)
+	pc1 = pca.fit_transform(X)
+
+	return pc1
+
+def vis3d(X,yy):
+	X = np.array(X)
+	print('pca shape', X.shape)
+
+	#X = PCA_sklearn(X, 3)
+	x = X[:,0]
+	y = X[:,1]
+	z = X[:,2]
+	
+	length = len(z)
+	
+	colors = []
+	for i in yy:
+
+
+		if i == 1:
+			colors.append( 'red' )
+		elif i == 0:
+			colors.append( 'brown' )
+		elif i == 2:
+			colors.append( 'blue' )
+		elif i == 5:
+			colors.append( 'blue' )
+		elif i == 3:
+			colors.append( 'green' )
+		elif i == 6:
+			colors.append( 'yellow' )
+		else:
+			colors.append( 'gray' )	
+			
+
+
+	fig = plt.figure(figsize=(8,6),dpi=80)
+	axis = fig.add_subplot(1,1,1,projection="3d")
+	axis.scatter(x.flatten(),y.flatten(),z.flatten(), facecolors=colors,marker='.')
+	plt.show()
+
+
+
 from sklearn import svm
 
 if __name__ == "__main__":
@@ -62,9 +117,16 @@ if __name__ == "__main__":
 			vec = img.reshape((-1,3))
 			res = clf.predict(vec)
 			
+			#from sklearn.mixture import GaussianMixture
+			#gm = GaussianMixture(n_components=5, random_state=0,covariance_type='spherical').fit(X)
+			#gm.means_
+			#res = gm.predict(vec)
+			
 			w,h,c = img.shape
 			mask = res.reshape((w,h))
 
+			#print(res)
+			#vis3d(vec,res)
 			
 			show = img.copy()
 			#show[mask==1,0] +=30
