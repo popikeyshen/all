@@ -40,3 +40,7 @@ http://iht.univ.kiev.ua/virtual-lab/chem/phys-met-chem-comp/story_content/extern
 ### russian article
 
 https://gorchilin.com/articles/coil/nmr
+
+
+### ua article
+http://artradiolab.com/d.g7.htm

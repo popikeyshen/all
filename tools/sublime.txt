@@ -1,0 +1,7 @@
+Sublime text 'compare side by side':
+
+    Press CTRL + SHIFT + P
+    Type Package Control: Install Package
+    Press ENTER
+    Type Compare Side
+    Select package named Compare Side-By-Side
