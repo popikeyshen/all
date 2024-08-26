@@ -4,7 +4,7 @@ import cv2
 from matplotlib import pyplot as plt
 
 import os
-print(os.listdir("../input"))
+#print(os.listdir("../input"))
 
 def showImage(img):
     plt.figure(figsize=(15,15))
@@ -51,8 +51,8 @@ def selectQMatrix(qName):
         return np.ones((8,8)) #it suppose to return original image back
 
 
-directory = 'naturepng.png'
-img = cv2.imread('../input/'+directory,0)
+directory = 'cat.jpg'
+img = cv2.imread('./'+directory,0)
 showImage(img)
 
 height  = len(img) #one column of image
